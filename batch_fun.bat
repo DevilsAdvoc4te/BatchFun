@@ -31,8 +31,9 @@ Call :sleep 15
 :CHECKAGENT
 Wmic PROCESS WHERE "Caption = 'agent.exe'" GET /VALUE | FINDSTR /c:agent.exe 1>nul
 
-Echo Error level 1: %errorlevel%
-Goto :eof
+:: Used to DEBUG
+::Echo Error level 1: %errorlevel%
+::Goto :eof
 
 If %errorlevel% equ 0 (
     If %_count% gtr 10 (
